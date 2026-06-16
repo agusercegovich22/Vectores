@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void CARGA(float[],int);
+void INVERTIR(float[],float[],int);
+void MOSTRAR(float[],int);
+
+int main(){
+    float v[10], vi[10];
+    CARGA(v, 10);
+    INVERTIR(v, vi, 10);
+    MOSTRAR(vi, 10);
+
+    return 0;
+}
+
+CARGA(float v[], int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        printf("Ingresar el valor de la posicion %d: ", i);
+        scanf("%f", &v[i]);
+    }
+}
+
+INVERTIR(float v[], float vi[], int tam){
+    int i;
+    for(i=0;i<tam;i++)
+        vi[i]=v[tam-1   º-i];
+}
+
+MOSTRAR(float vi[], int tam){
+    int i;
+    printf("Vector invertido:\n");
+    for(i=0;i<tam;i++)
+        printf("\t%2.0f\n", vi[i]);
+}
